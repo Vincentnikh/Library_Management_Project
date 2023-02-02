@@ -1,0 +1,23 @@
+body
+{
+
+    background-color:lightblue;
+}
+
+input,select,[type=text],input[type=password]
+{
+    background-color:pink;
+    color:black;
+    width:100%;
+    border:2px solid red;
+    box-sizing:border-box;
+    padding:10px 15px;
+    margin:8px 0;
+
+
+}
+form
+{
+    border:10px solid #f1f1f1;
+
+}

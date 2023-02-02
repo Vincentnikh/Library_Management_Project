@@ -1,0 +1,40 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 style="background-color:teal;color:black" align="center">Add Book</h2>
+<form action="readdata" method="POST">
+    {% csrf_token %}
+    <h3 style="color:blue" align="center"></h3>
+    <table align="center">
+        <tr>
+            <td>Book_Name:</td>
+            <td><input type="text" name="txtBookName" ></td>
+        </tr>
+        <tr>
+            <td>Author_Name:</td>
+            <td><input type="text" name="txtAuthorName" ></td>
+        <tr>
+            <td>Course:</td>
+            <td><select name="ddlcourse">
+                    {% for i in course %}
+                        <option>{{ i }}</option>
+                    {% endfor %}
+            </select>
+            </td>
+        <tr>
+            <td><input type="submit" name="btnSub" value="Submit"></td>
+
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+{% endblock %}>

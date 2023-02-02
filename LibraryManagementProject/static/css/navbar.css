@@ -1,0 +1,20 @@
+ul{
+    border:solid 1px black;
+    padding:0;
+    background:lightgrey;
+    font-family:Arial,san serif;
+    font-size:15px;
+
+}
+li{
+    border:solid 1px green;
+    display:inline-block;
+
+
+}
+a{
+    border:solid 1px red;
+    padding:10px;
+    color:white;
+    text-decoration:none;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Page</title>
+</head>
+<h2 style="background-color:red;color:black" align="center">Register Student</h2>
+<form action="sregdata" method="POST">
+    {% csrf_token %}
+    <h3 style="color:blue" align="center">{{data}}</h3>
+    <table align="center">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="txtname" ></td>
+        </tr>
+        <tr>
+            <td>Phoneno:</td>
+            <td><input type="number" name="txtPhno" ></td>
+        </tr>
+
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="txtpswd"></td>
+        </tr>
+        <tr>
+            <td>Semester:</td>
+            <td><input type="text" name="txtsemester"></td>
+        </tr>
+        <tr>
+            <td>Course:</td>
+            <td><select name="ddlcourse">
+                    {% for i in course %}
+                        <option>{{ i }}</option>
+                    {% endfor %}
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="btnSub" value="Register"></td>
+
+        </tr>
+    </table>
+</form>
+<body>
+
+</body>
+</html>

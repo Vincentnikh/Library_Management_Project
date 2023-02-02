@@ -1,0 +1,33 @@
+{% extends 'navbar.html' %}
+{% block content %}
+    <h2 align="center">Add Book Data</h2>
+    <form  method="POST">
+        {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>Book Name</td>
+            <td><input type="text" name="txtBookName" value="{{ course.Book_Name }}"></td>
+        </tr>
+        <tr>
+            <td>Author Name</td>
+            <td><input type="text" name="txtName" value="{{ course.Author_Name }}"></td>
+        </tr>
+        <tr>
+            <td>Course:</td>
+            <td>
+                <select name="ddlcourse">
+                    {% for i in course_name %}
+                        <option>{{ i.Course_Name }}</option>
+                    {% endfor %}
+
+                </select>
+            </td>
+
+        </tr>
+        <tr>
+            <td><input type="submit" name="btnSub" value="Submit"></td>
+        </tr>
+    </table>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Profile</title>
+</head>
+<body>
+<h2 style="background-color:green;color:fuchsia" align="center">Update Profile</h2>
+<form  method="POST">
+    {% csrf_token %}
+    <h3 style="color:blue" align="center"></h3>
+    <table align="center">
+        <tr>
+            <td>Student Name:</td>
+            <td><input type="text" name="tbsname" value="{{data.Stud_Name}}" ></td>
+        </tr>
+        <tr>
+            <td>Student Phno:</td>
+            <td><input type="number" name="tbsphno" pattern="([+][9][1][1])?[6-9]{1}/d{9}" value="{{data.Stud_Phno}}"  ></td>
+        </tr>
+        <tr>
+
+            <td>Student Course:</td>
+            <td><input type="number" name="tbscourse" value="{{data.Stud_Course}}" disabled></td>
+
+
+        </tr>
+        <tr>
+            <td>Student Semester</td>
+            <td><input type="number" name="tbssem" min=1 max=8 value="{{data.Stud_sem}}" ></td>
+        </tr>
+        <tr>
+            <td>Student Password</td>
+            <td><input type="password" name="tbspswd" value="{{data.Stud_pass}}" ></td>
+        </tr>
+
+        <tr>
+            <td col span='2' align='center'></td>
+            <td><input type="submit" name="btnsub" value="UpdateProfile" ></td>
+        </tr>
+
+
+
+    </table>
+</form>
+</body>
+</html>

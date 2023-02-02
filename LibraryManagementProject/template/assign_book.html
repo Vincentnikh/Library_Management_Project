@@ -1,0 +1,83 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 style="background-color:teal;color:black" align="center">Assign Book Here</h2>
+<form action="readassigndata"  method="post">
+    {% csrf_token %}
+    <h3 style="color:blue" align="center"></h3>
+    <div style="float:left;width:1000px">
+        <table align="center">
+            <tr>
+                <td>Student Semester:</td>
+                <td><input type="number" name="txtsem" ></td>
+            </tr>
+
+            <tr>
+                <td>Student Course:</td>
+                <td><select name="ddlcourse">
+                    {% for i in course %}
+                        <option>{{ i.Course_Name }}</option>
+                    {% endfor %}
+                </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" name="btnSub" value="submit"></td>
+            </tr>
+        </table>
+    </div>
+</form>
+<form action="sreaddata" method="post">
+    {% csrf_token %}
+
+    <div style="float:right;width:1200px">
+
+        <table align="center">
+            <tr>
+                <td>Student Name:</td>
+                <td><select name="ddlsname">
+                    {% for i in data  %}
+                        <option>{{ i.Stud_Name }}</option>
+                    {% endfor %}
+                </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Book Name:</td>
+                <td><select name="ddlbname">
+                    {% for i in book %}
+                        <option>{{ i.Book_Name }}</option>
+                    {% endfor %}
+                </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Start Date:</td>
+                <td><input type="date" name="tbsdate" value="{{date.Start_Date}}"></td>
+            </tr>
+            <tr>
+                <td>End Date:</td>
+                <td><input type="date" name="tbedate" value="{{date.End_Date}}"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="btnSub" value="Assign"></td>
+
+            </tr>
+        </table>
+    </div>
+</form>
+
+</body>
+</html>
+{% endblock %}>
